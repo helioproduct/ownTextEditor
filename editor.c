@@ -3,12 +3,22 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <termios.h>
+#include <errno.h>
 
 struct termios orig_termios; // Original terminal attr;
 
+void die(const char *s)
+{   
+    perror(s);
+    exit(1);
+}
+
 void disableRawMode()
 {
-    tcsetattr(STDIN_FILENO, TCSAFLUSH, &orig_termios);
+    if (tcsetattr(STDIN_FILENO, TCSAFLUSH, &orig_termios) == -1)
+    {
+        die("tcsetattr");
+    }
 }
 
 // Canonical mode: Keyboard input is only sent
@@ -17,7 +27,11 @@ void disableRawMode()
 // switches to the raw mode 
 void enableRawMode()
 {
-    tcgetattr(STDIN_FILENO, &orig_termios);    
+    if (tcsetattr(STDIN_FILENO, TCSAFLUSH, &orig_termios) == -1)
+    {
+        die("tcsetattr");
+    } 
+
     atexit(disableRawMode);
 
     struct termios raw = orig_termios;
@@ -40,21 +54,28 @@ void enableRawMode()
     // max amount of time 
     raw.c_cc[VTIME] = 1;
 
-    tcsetattr(STDIN_FILENO, TCSAFLUSH, &raw);
+    if (tcsetattr(STDIN_FILENO, TCSAFLUSH, &raw) == -1)
+    {
+        die("tcsetattr");
+    }
 }
 
-int main(void)
+int main()
 {
     enableRawMode();
 
-    char c;
-    while (read(STDIN_FILENO, &c, 1) == 1 && c != 'q')
+    while (1) 
     {
+        char c = '\0';
+        if (read(STDIN_FILENO, &c, 1) == -1 && errno != EAGAIN) {
+            die("read");
+        }
         if (iscntrl(c)) {
             printf("%d\r\n", c);
-        }  else {
+        } else {
             printf("%d ('%c')\r\n", c, c);
         }
+        if (c == 'q') break;
     }
 
     return 0;
