@@ -1,2 +1,2 @@
 # ownTextEditor
-own text edigor written in C.
+own text editor written in C.
