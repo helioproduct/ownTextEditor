@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Jun 23 20:28:47 2022
+# Make data base, printed on Fri Jun 24 14:49:09 2022
 
 # Variables
 
@@ -21,9 +21,11 @@ NO_AT_BRIDGE = 1
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-c66050bc-ae0e-4464-b81b-b28b30e7f105.sock
+GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_CWD = /home/helio/Desktop/ownTextEditor
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-7af2f92d-3d7d-44ed-a810-3572f291c74c.sock
+# environment
+VSCODE_CWD = /home/helio
 # environment
 LESS_TERMCAP_me = [0m
 # environment
@@ -49,7 +51,7 @@ MAIL = /var/spool/mail/helio
 # environment
 XDG_DATA_DIRS = /home/helio/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
-OLDPWD = /home/helio/Desktop
+OLDPWD = /home/helio
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
@@ -63,15 +65,13 @@ CONDA_PROMPT_MODIFIER = (base)
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.BE5CO1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.FBZ6N1
 # default
 .LOADED := 
 # environment
 LESS_TERMCAP_md = [01;32m
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
-# environment
-GNOME_TERMINAL_SERVICE = :1.804
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -111,7 +111,7 @@ SNAP_REEXEC =
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 28085
+VSCODE_PID = 7466
 # environment
 MOZ_ENABLE_WAYLAND = 1
 # environment
@@ -119,11 +119,13 @@ XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
+BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
+# environment
 CONDA_PYTHON_EXE = /home/helio/anaconda3/bin/python
 # environment
 FREETYPE_PROPERTIES = truetype:interpreter-version=40
 # environment
-SESSION_MANAGER = local/helioPC:@/tmp/.ICE-unix/1238,unix/helioPC:/tmp/.ICE-unix/1238
+SESSION_MANAGER = local/helioPC:@/tmp/.ICE-unix/1299,unix/helioPC:/tmp/.ICE-unix/1299
 # automatic
 *F = $(notdir $*)
 # environment
@@ -134,8 +136,6 @@ CHROME_DESKTOP = code-url-handler.desktop
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
-# environment
-P9K_TTY = old
 # environment
 VSCODE_NLS_CONFIG = {"locale":"ru","availableLanguages":{"*":"ru"},"_languagePackId":"4165c719fdf7a78444ed970b4565033b.ru","_translationsConfigFile":"/home/helio/.config/Code/clp/4165c719fdf7a78444ed970b4565033b.ru/tcf.json","_cacheRoot":"/home/helio/.config/Code/clp/4165c719fdf7a78444ed970b4565033b.ru","_resolvedLanguagePackCoreLocation":"/home/helio/.config/Code/clp/4165c719fdf7a78444ed970b4565033b.ru/30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"/home/helio/.config/Code/clp/4165c719fdf7a78444ed970b4565033b.ru/corrupted.info","_languagePackSupport":true}
 # default
@@ -151,9 +151,9 @@ MAKECMDGOALS := all
 # environment
 XMODIFIERS = @im=ibus
 # environment
-SHLVL = 2
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/f27fee03_9609_483e_982e_71faa9bf7dee
+SHLVL = 1
 # environment
 MAKELEVEL := 0
 # default
@@ -161,7 +161,7 @@ MAKE = $(MAKE_COMMAND)
 # environment
 SNAP_COOKIE = hIMeurp_xzXUPlZTfkr81LSvelS8xDMrXjJcIVXl9c42YJ_vrBmW
 # environment
-PATH = /home/helio/anaconda3/bin:/home/helio/anaconda3/condabin:/home/helio/.local/bin:/usr/local/bin:/usr/bin:/var/lib/snapd/snap/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+PATH = /home/helio/anaconda3/bin:/home/helio/anaconda3/condabin:/home/helio/.local/bin:/home/helio/.local/bin:/usr/local/bin:/usr/bin:/var/lib/snapd/snap/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
 # environment
 LESS_TERMCAP_se = [0m
 # default
@@ -177,6 +177,8 @@ LESS_TERMCAP_mb = [01;32m
 # environment
 SNAP = /snap/code/99
 # environment
+INVOCATION_ID = cedaa34fa8ea4191a2eadd575e120733
+# environment
 SNAP_REVISION = 99
 # environment
 SNAP_REAL_HOME = /home/helio
@@ -191,7 +193,7 @@ GNOME_SETUP_DISPLAY = :1
 # environment
 XDG_CURRENT_DESKTOP = GNOME
 # environment
-LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.swp=00;90:*.tmp=00;90:*.dpkg-dist=00;90:*.dpkg-old=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:
+LS_COLORS = 
 # automatic
 +F = $(notdir $+)
 # environment
@@ -207,11 +209,13 @@ CONDA_DEFAULT_ENV = base
 # environment
 LOGNAME = helio
 # environment
+GIO_LAUNCHED_DESKTOP_FILE = /var/lib/snapd/desktop/applications/code_code.desktop
+# environment
 SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := editor
 # environment
-SYSTEMD_EXEC_PID = 1252
+SYSTEMD_EXEC_PID = 1313
 # environment
 EDITOR = /usr/bin/nano
 # environment
@@ -227,15 +231,19 @@ SNAP_DATA = /var/snap/code/99
 # environment
 SNAP_CONTEXT = hIMeurp_xzXUPlZTfkr81LSvelS8xDMrXjJcIVXl9c42YJ_vrBmW
 # environment
+MANAGERPID = 1253
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 7422
+# environment
 _ = /usr/bin/make
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-COLORTERM = truecolor
-# environment
 GDK_PIXBUF_MODULE_FILE = /home/helio/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
 _CE_M = 
+# environment
+JOURNAL_STREAM = 8:22069
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -248,8 +256,6 @@ QT_IM_MODULE = ibus
 ELECTRON_RUN_AS_NODE = 1
 # environment
 VSCODE_IPC_HOOK = /run/user/1000/vscode-e4b83fef-1.68.1-main.sock
-# environment
-TERM = xterm-256color
 # environment
 SNAP_NAME = code
 # environment
@@ -265,18 +271,13 @@ SUFFIXES :=
 # environment
 QT_AUTO_SCREEN_SCALE_FACTOR = 1
 # environment
-_P9K_TTY = /dev/pts/0
-# environment
 VSCODE_CLI = 1
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
-VTE_VERSION = 6800
-# environment
 SNAP_COMMON = /var/snap/code/common
 # environment
 LS_OPTIONS = --color=auto
- 
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
 # environment
@@ -290,11 +291,12 @@ _CE_CONDA =
 # environment
 GDMSESSION = gnome
 # environment
+ 
 PKGFILE_PROMPT_INSTALL_MISSING = 1
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # variable set hash-table stats:
-# Load=140/1024=14%, Rehash=0, Collisions=19/170=11%
+# Load=141/1024=14%, Rehash=0, Collisions=12/171=7%
 
 # Pattern-specific Variable Values
 
@@ -302,9 +304,9 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # Directories
 
-# . (device 66310, inode 3209335): 7 files, no impossibilities.
+# . (device 66310, inode 3209335): 8 files, no impossibilities.
 
-# 7 files, no impossibilities in 1 directories.
+# 8 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -353,12 +355,12 @@ editor.o:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 14 / storage = 117 B / avg = 8 B
-# current buf: size = 8162 B / used = 117 B / count = 14 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 15 / storage = 128 B / avg = 8 B
+# current buf: size = 8162 B / used = 128 B / count = 15 / avg = 8 B
 
-# strcache performance: lookups = 19 / hit rate = 26%
+# strcache performance: lookups = 20 / hit rate = 25%
 # hash-table stats:
-# Load=14/8192=0%, Rehash=0, Collisions=0/19=0%
-# Finished Make data base on Thu Jun 23 20:28:47 2022
+# Load=15/8192=0%, Rehash=0, Collisions=0/20=0%
+# Finished Make data base on Fri Jun 24 14:49:09 2022
 
  
