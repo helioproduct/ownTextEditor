@@ -1,9 +1,9 @@
 # ownTextEditor
 own text editor written in C.
 
-Compile:
+**Compile**:
 make
 
-Execute:
+**Execute**:
 ./editor
 
